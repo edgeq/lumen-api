@@ -1,0 +1,5 @@
+name: lumen-api
+recipe: laravel
+config:
+  php: '7.2'
+  webroot: public
