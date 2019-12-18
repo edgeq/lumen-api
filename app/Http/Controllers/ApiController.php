@@ -25,14 +25,14 @@ class ApiController extends Controller
                      * Manipulates API to include the following:
                      *
                      *
-                     * { name: [Title => results.name.title] [first => results.name.first] [last => results.name.last]}
+                     * {
+                     *   name: [Title => results.name.title] [first => results.name.first] [last => results.name.last]}
                      *   email: [email = results.email]
                      *   photo: [photo url => results.picture.thumbnail]
                      *   birthday: [formatted birthday, April 24, 2012 => redults.dob(formatted)]
                      * }
                      */
-                    // $customBody = $body[0]->name;
-                    // echo $customBody;
+
                     $response   = json_decode($body, true);
                     $title      = $response["results"][0]["name"]["title"];
                     $first_name = $response["results"][0]["name"]["first"];
@@ -42,7 +42,7 @@ class ApiController extends Controller
                     $birthday   = $response["results"][0]["dob"]["date"];
                     $dob        = strtotime($birthday);
                     $dob_formatted = date('F d, Y', $dob);
-                    // return $response["results"][0]["name"]["first"];
+
                     $res_object = [
                         // "title" => $title,
                         // "first_name" => $first_name,
@@ -54,7 +54,6 @@ class ApiController extends Controller
 
                     ];
                     return $res_object;
-                    // return json_decode($body, true);
                 },
                 function (RequestException $e) {
                     echo $e->getMessage();
