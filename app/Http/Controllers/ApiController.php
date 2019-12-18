@@ -15,22 +15,18 @@ class ApiController extends Controller
     //
     public function get_user()
     {
-        $client = new Client(['headers' => null]);
-        $request = new Request('GET', 'https://randomuser.me/api');
+        $client = new Client();
+        $request = new Request('GET', 'https://randomuser.me/api', ['headers' => ['Content-Type' => 'application/json']]);
         $promise = $client->sendAsync($request)
             ->then(
                 function (Response $resp) {
-                    // $headers = $resp->getHeaders();
-                    $body = $resp->getBody();
-                    $string = $body->getContents();
-                    $json = json_decode($string);
-                    echo response()->json($json);
-                    // echo $headers;
+                    $body = $resp->getBody()->getContents();
+                    return json_decode($body, true);
                 },
                 function (RequestException $e) {
                     echo $e->getMessage();
                 }
             );
-        $promise->wait();
+        return $promise->wait();
     }
 }
