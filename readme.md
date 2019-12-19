@@ -2,7 +2,7 @@
 
 ## Getting Started
 This project was developed using [Lando](https://docs.lando.dev/basics/).
-However, you can also run this with any PHP-backend running PHP >= 7.2
+However, you can also run this with a PHP back end running PHP >= 7.2
 
 To run using the built-in PHP server, run the following commands:
   ```
