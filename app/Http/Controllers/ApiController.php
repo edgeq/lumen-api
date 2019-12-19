@@ -38,7 +38,7 @@ class ApiController extends Controller
                     $first_name = $response["results"][0]["name"]["first"];
                     $last_name  = $response["results"][0]["name"]["last"];
                     $email      = $response["results"][0]["email"];
-                    $photo      = $response["results"][0]["picture"]["thumbnail"];
+                    $photo      = $response["results"][0]["picture"]["medium"];
                     $birthday   = $response["results"][0]["dob"]["date"];
                     $dob        = strtotime($birthday);
                     $dob_formatted = date('F d, Y', $dob);
