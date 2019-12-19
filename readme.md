@@ -1,7 +1,7 @@
 # Lumen API Project
 
 ## Getting Started
-This project was developed using Lando.
+This project was developed using [Lando](https://docs.lando.dev/basics/).
 However, you can also run this with any PHP-backend running PHP >= 7.1
 
 To run using the built-in PHP server, run the following commands:
