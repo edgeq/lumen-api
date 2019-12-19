@@ -17,11 +17,11 @@
       <div class="bg-gray-100 flex justify-between p-6 rounded-lg border">
         <img id="avatar" src="https://picsum.photos/200" alt="avatar" class="rounded-full p-2" />
         <div class="flex flex-col items-center justify-right">
-          <h4 class="font-bold" id="name">Name goes here</h4>
+          <h4 class="font-bold" id="name"></h4>
           <div id="email">
-            email@email.com
+
           </div>
-          <div id="birthday">birthday goes here</div>
+          <div id="birthday">e</div>
         </div>
       </div>
 
@@ -50,7 +50,6 @@
         email.innerText = userInfo.email;
         birthday.innerText = userInfo.birthday;
         avatar.src = userInfo.photo;
-        console.log(userInfo);
         return;
       });
   }
